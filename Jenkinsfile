@@ -6,11 +6,11 @@ node{
     }
 
     stage('Build image') {
-        app = docker.build("Lstar974/DevOps")
+        app = docker.build("lucas/nginx")
     }
 
     stage('Test image') {
-        docker.image('Lstar974/DevOps').withRun('-p 80:80') { c ->
+        docker.image('lucas/nginx').withRun('-p 80:80') { c ->
         sh 'docker ps'
         sh 'curl localhost'
 	     }
