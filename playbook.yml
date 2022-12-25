@@ -2,7 +2,8 @@
 - name: install nginx
   hosts: all
   become: yes
+  ignore_unreachable: yes
   roles:
     - nginx
-ignore_unreachable: yes
+
 
